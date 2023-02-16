@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "animate.css": "^4.1.1",
+    "animejs": "^3.2.1",
     "sass": "^1.58.0",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6"

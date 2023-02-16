@@ -23,7 +23,7 @@
       <h2 ref="text" id="text">Parallax Website</h2>
       <img src="/home/leaf.png" ref="leaf" id="leaf" />
       <img src="/home/plant.png" id="plant" />
-      <div class="downScoll" v-if="downScoll">
+      <div ref="downScollDom" class="downScoll" @click="scroll">
         <span class="iconfont icon-xiangxia"></span>
         <span class="iconfont icon-xiangxia"></span>
         <span class="iconfont icon-xiangxia"></span>
@@ -37,28 +37,42 @@
 </div>
 </template>
 <script setup lang="ts">
-
-
-
-
-
-
-
-
-
-
-
-
 import { ref, onMounted } from "vue";
-
 import Menu from "./menu.vue";
+import anime from 'animejs/lib/anime.js';
 const downScoll = ref<boolean>(true)
+const downScollDom = ref<HTMLDivElement>()
 const text = ref<HTMLDivElement | null>(null);
 const leaf = ref<HTMLDivElement | null>(null);
 const hill1 = ref<HTMLDivElement | null>(null);
 const hill4 = ref<HTMLDivElement | null>(null);
 const hill5 = ref<HTMLDivElement | null>(null);
+
+const scroll = () => {
+
+  const top = document.body.clientHeight
+  const pageY = window.pageYOffset;
+  const endPosition = top + pageY;
+
+  const startTime = +new Date();
+  const duration = 3000; //ms
+
+  function run() {
+    const time = +new Date() - startTime;
+
+    window.scrollTo(0, pageY + top * (time / duration));
+    run.timer = requestAnimationFrame(run);
+
+    if (time >= duration) {
+      window.scrollTo(0, endPosition);
+      cancelAnimationFrame(run.timer);
+    }
+  }
+
+  requestAnimationFrame(run);
+}
 onMounted(() => {
+
   window.addEventListener("scroll", () => {
     let value = window.scrollY;
     downScoll.value = (value == 0)
@@ -84,6 +98,27 @@ onMounted(() => {
   z-index: 120;
   display: flex;
   flex-direction: column;
+  position: absolute;
+  bottom: 0;
+
+  &:hover {
+    animation: transmove 1s ease-out;
+    cursor: pointer;
+  }
+
+  span:nth-child(1) {
+    animation: transOpacity 6s linear infinite;
+  }
+
+  span:nth-child(2) {
+    animation: transOpacity 6s linear infinite;
+    animation-delay: 2s;
+  }
+
+  span:nth-child(3) {
+    animation: transOpacity 6s linear infinite;
+    animation-delay: 4s;
+  }
 
   .icon-xiangxia {
     color: #fff;
@@ -91,6 +126,33 @@ onMounted(() => {
   }
 }
 
+@keyframes transmove {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(20px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes transOpacity {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
 
 ::selection {
   background: rgba(0, 0, 0, 0.2);
