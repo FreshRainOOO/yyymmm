@@ -25,21 +25,15 @@
                 <h1>高级撞色设计</h1>
             </div>
         </div>
-</div>
+    </div>
 </template>
 <script setup lang="ts">
-import anime from 'animejs';
+import anime from 'animejs/lib/anime.js';
+
+
 import { onMounted } from "vue";
 onMounted(() => {
-    console.log('anime', anime);
-
-    anime({
-        targets: '.a .b',
-        left: '240px',
-        backgroundColor: '#FFF',
-        borderRadius: ['0%', '50%'],
-        easing: 'easeInOutQuad'
-    })
+   
 })
 
 </script>
