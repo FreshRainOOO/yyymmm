@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import mdPlugin from 'vite-plugin-markdown'
 import * as path from 'path'
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
   css: {
@@ -11,12 +11,12 @@ export default defineConfig({
         math: "always",
       },
     },
-    
+
   },
   resolve: {
     alias: {
-    '@': path.resolve(__dirname, 'src'),
+      '@': path.resolve(__dirname, 'src'),
+    }
   }
-}
-  
+
 })

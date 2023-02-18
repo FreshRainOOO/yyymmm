@@ -8,11 +8,13 @@
                 <div class="ball"></div>
             </div>
         </div>
-</div>
+    </div>
 </template>
     
 <script>
 import anime from 'animejs/lib/anime.js';
+
+import { md } from './hhh.md'
 export default {
     data() {
         return {
@@ -20,7 +22,7 @@ export default {
         }
     },
     mounted() {
-        console.log('1234');
+        console.log('md', md);
         var myAnimation = anime({
             targets: ['.blue', '.green'],
             translateX: '300px',

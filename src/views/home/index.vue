@@ -7,7 +7,7 @@
       <h2 class="logo">Logo</h2>
       <nav class="navigation">
         <a href="#" class="active">Home</a>
-        <a href="#">About</a>
+        <a href="/test">test</a>
         <a href="#">Service</a>
         <a href="#">Contact</a>
       </nav>
@@ -20,7 +20,7 @@
       <img src="/home/hill4.png" id="hill4" ref="hill4" />
       <img src="/home/hill5.png" id="hill5" ref="hill5" />
       <img src="/home/tree.png" id="tree" />
-      <h2 ref="text" id="text">Parallax Website</h2>
+      <h2 ref="text" id="text"><span>Flower</span> Sun Rainbow</h2>
       <img src="/home/leaf.png" ref="leaf" id="leaf" />
       <img src="/home/plant.png" id="plant" />
       <div ref="downScollDom" class="downScoll" @click="scroll">
@@ -34,7 +34,7 @@
       <h2>Parallax Scrolling Website</h2>
       <Menu />
     </section>
-</div>
+  </div>
 </template>
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
@@ -208,6 +208,17 @@ header {
   justify-content: center;
   align-items: center;
   height: 100vh;
+
+  #text {
+    span {
+      color: transparent;
+      filter: contrast(1.7);
+      background-image: url(/home/flower.png);
+      background-size: 35%;
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+  }
 
   img {
     position: absolute;

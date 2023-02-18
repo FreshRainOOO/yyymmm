@@ -30,7 +30,6 @@
 <script setup lang="ts">
 import anime from 'animejs/lib/anime.js';
 
-
 import { onMounted } from "vue";
 onMounted(() => {
    
