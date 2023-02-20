@@ -1,9 +1,11 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import mdPlugin from 'vite-plugin-markdown'
+import { plugin } from 'vite-plugin-markdown'
 import * as path from 'path'
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [vue(),  plugin({
+    mode: ["html"],
+  })],
   css: {
     // 预处理器配置项
     preprocessorOptions: {

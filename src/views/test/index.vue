@@ -13,8 +13,7 @@
     
 <script>
 import anime from 'animejs/lib/anime.js';
-
-import { md } from './hhh.md'
+import { html } from './hhh.md';
 export default {
     data() {
         return {
@@ -22,7 +21,7 @@ export default {
         }
     },
     mounted() {
-        console.log('md', md);
+        console.log('htmle', html);
         var myAnimation = anime({
             targets: ['.blue', '.green'],
             translateX: '300px',
