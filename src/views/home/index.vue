@@ -21,9 +21,9 @@
       <img src="/home/hill5.png" id="hill5" ref="hill5" />
       <img src="/home/tree.png" id="tree" />
       <h2 ref="text" id="text">
-        <div class="flower">Flower</div>
-        <div class="sun">Sun</div>
-        <div class="rainbow">Rainbow</div>
+        <span class="flower">Flower</span>
+        <span> Sun</span>
+        <span> Rainbow</span>
       </h2>
       <img src="/home/leaf.png" ref="leaf" id="leaf" />
       <img src="/home/plant.png" id="plant" />
@@ -35,7 +35,7 @@
     </section>
 
     <section class="sec">
-      <h2>Parallax Scrolling Website</h2>
+      <h2>Hope everything goes your way</h2>
       <Menu />
     </section>
   </div>
@@ -214,8 +214,6 @@ header {
   height: 100vh;
 
   #text {
-    display: flex;
-    width: 800px;
 
     .flower {
       color: transparent;
@@ -224,81 +222,8 @@ header {
       background-size: 35%;
       background-clip: text;
       -webkit-background-clip: text;
-      margin-right: 40px;
     }
 
-    .sun {
-      color: #ff905b;
-      &:hover{
-      -webkit-animation: shining 0.5s alternate infinite;
-      animation: bb 2s 1 alternate ease-in-out, shining 0.5s alternate 2s infinite;
-      -webkit-animation: bb 2s 1 alternate ease-in-out, shining 0.5s alternate 2s infinite;
-      }
-    }
-    @-webkit-keyframes bb {
-      from {
-          text-shadow: 0 0 10px #ff905b, 0 0 20px #ff905b, 0 0 30px #ff905b, 0 0 40px skyblue, 0 0 50px skyblue, 0 0 60px skyblue;
-        }
-
-        to {
-          text-shadow: 0 0 5px red, 0 0 10px red, 0 0 15px red, 0 0 20px skyblue, 0 0 25px skyblue, 0 0 30px skyblue;
-        }
-    }
-    @-webkit-keyframes shining {
-        from {
-          text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px skyblue, 0 0 50px skyblue, 0 0 60px skyblue;
-        }
-
-        to {
-          text-shadow: 0 0 5px red, 0 0 10px red, 0 0 15px red, 0 0 20px skyblue, 0 0 25px skyblue, 0 0 30px skyblue;
-        }
-      }
-
-    .rainbow {
-      position: absolute;
-      right: 0;
-      -webkit-transform-style: preserve-3d;
-      -webkit-text-fill-color: transparent;
-      -webkit-background-clip: text;
-      -webkit-background-size: 200% 100%;
-
-      &:hover {
-        -webkit-animation: a1 1.5s 1 alternate ease-in-out, maskedAnimation 4s infinite 1s ease-in-out;
-      }
-
-      /*设置元素保留3D位置*/
-      /*设置动画*/
-      -webkit-animation-fill-mode: forwards;
-    }
-
-    @keyframes a1 {
-
-      /*创建动画*/
-      0% {
-        -webkit-transform: rotateY(0deg) rotateX(0deg);
-      }
-
-      50% {
-        -webkit-transform: rotateY(180deg) rotateX(30deg);
-      }
-
-      100% {
-        -webkit-transform: rotateY(360deg) rotateX(0deg);
-      }
-    }
-
-    @keyframes maskedAnimation {
-      0% {
-        background-position: 0 0;
-        background-image: -webkit-linear-gradient(left, skyblue, pink 25%, skyblue 50%, pink 75%, skyblue);
-      }
-
-      100% {
-        background-position: -100% 0;
-        background-image: -webkit-linear-gradient(left, skyblue, pink 25%, skyblue 50%, pink 75%, skyblue);
-
-      }
-    }
   }
 
   img {

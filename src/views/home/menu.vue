@@ -1,26 +1,26 @@
 <template>
-    <div class="menu">
+    <div class="menu" @click="fullInScreen">
         <div class="a">
             <div>
-                <h1>高级撞色设计</h1>
+                <Blog></Blog>
             </div>
         </div>
-        <div class="b">
+        <div class="b" :class="fullDom == 'b' && 'full'" @mouseenter="fullInScreen('b')" @mouseleave="reGrid">
             <div>
                 <h1>高级撞色设计</h1>
             </div>
         </div>
-        <div class="c">
+        <div class="c" :class="fullDom == 'c' && 'full'" @mouseenter="fullInScreen('c')" @mouseleave="reGrid">
             <div>
                 <h1>高级撞色设计</h1>
             </div>
         </div>
-        <div class="d">
+        <div class="d" :class="fullDom == 'd' && 'full'" @mouseenter="fullInScreen('d')" @mouseleave="reGrid">
             <div>
                 <h1>高级撞色设计</h1>
             </div>
         </div>
-        <div class="e">
+        <div class="e" :class="fullDom == 'e' && 'full'" @mouseenter="fullInScreen('e')" @mouseleave="reGrid">
             <div>
                 <h1>高级撞色设计</h1>
             </div>
@@ -29,10 +29,18 @@
 </template>
 <script setup lang="ts">
 import anime from 'animejs/lib/anime.js';
-
-import { onMounted } from "vue";
+import Blog from './components/blog.vue'
+import { onMounted, ref } from "vue";
+const fullDom = ref<string>()
+const fullInScreen = (e) => {
+    console.log(e);
+    fullDom.value = e
+}
+const reGrid = () => {
+    fullDom.value = ''
+}
 onMounted(() => {
-   
+
 })
 
 </script>
@@ -58,10 +66,32 @@ onMounted(() => {
             justify-content: center;
         }
     }
+
+    .full {
+
+        -webkit-animation: full .4s 1 alternate ease-in-out;
+        // transition: all 2s ease-out;
+        grid-column-start: a-start;
+        grid-column-end: b-end;
+        grid-row-start: a-start;
+        grid-row-end: c-end;
+        z-index: 10;
+
+        @keyframes full {
+            0% {
+                opacity: 0.7
+            }
+
+            100% {
+                opacity: 1
+            }
+        }
+    }
 }
 
 .a {
     grid-area: a;
+
 
     div {
         background-color: #ea6b48;
