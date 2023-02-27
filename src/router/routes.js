@@ -11,5 +11,11 @@ const routes = [
     title: "测试",
     component: () => import("@/views/test/index.vue"),
   },
+  {
+    path: "/da-blog/choose",
+    name: "choose",
+    title: "choose",
+    component: () => import("@/views/test/list/index.vue"),
+  },
 ];
 export default routes;

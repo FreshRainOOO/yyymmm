@@ -7,22 +7,22 @@
         </div>
         <div class="b" :class="fullDom == 'b' && 'full'" @mouseenter="fullInScreen('b')" @mouseleave="reGrid">
             <div>
-                <h1>高级撞色设计</h1>
+                <h1>青苹果</h1>
             </div>
         </div>
         <div class="c" :class="fullDom == 'c' && 'full'" @mouseenter="fullInScreen('c')" @mouseleave="reGrid">
             <div>
-                <h1>高级撞色设计</h1>
+                <h1>眼</h1>
             </div>
         </div>
         <div class="d" :class="fullDom == 'd' && 'full'" @mouseenter="fullInScreen('d')" @mouseleave="reGrid">
             <div>
-                <h1>高级撞色设计</h1>
+                <h1>镜</h1>
             </div>
         </div>
         <div class="e" :class="fullDom == 'e' && 'full'" @mouseenter="fullInScreen('e')" @mouseleave="reGrid">
             <div>
-                <h1>高级撞色设计</h1>
+                <h1>COLOR</h1>
             </div>
         </div>
     </div>

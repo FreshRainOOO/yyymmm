@@ -35,7 +35,7 @@
     </section>
 
     <section class="sec">
-      <h2>Hope everything goes your way</h2>
+      <h2> return true;</h2>
       <Menu />
     </section>
   </div>
@@ -53,7 +53,6 @@ const hill4 = ref<HTMLDivElement | null>(null);
 const hill5 = ref<HTMLDivElement | null>(null);
 
 const scroll = () => {
-
   const top = document.body.clientHeight
   const pageY = window.pageYOffset;
   const endPosition = top + pageY;
