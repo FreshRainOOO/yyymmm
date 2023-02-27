@@ -7,7 +7,7 @@
       <h2 class="logo">Logo</h2>
       <nav class="navigation">
         <a href="#" class="active">Home</a>
-        <a href="/test">test</a>
+        <a href="/da-blog/test">test</a>
         <a href="#">Service</a>
         <a href="#">Contact</a>
       </nav>

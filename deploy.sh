@@ -25,7 +25,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url:https://freshrainooo.github.io/da-blog/
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
